@@ -195,8 +195,8 @@ class CharacterIdentity:
         b = other.coefficients
         # Zero-pad to equal length
         max_len = max(len(a), len(b))
-        a = np.pad(a, (max_len - len(a), 0))
-        b = np.pad(b, (max_len - len(b), 0))
+        a = np.pad(a, (0, max_len - len(a)))
+        b = np.pad(b, (0, max_len - len(b)))
 
         norm_a = np.linalg.norm(a)
         norm_b = np.linalg.norm(b)
